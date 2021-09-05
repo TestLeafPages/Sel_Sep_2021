@@ -184,6 +184,115 @@ Pseudocode:
  2. If a number is positive, print "The number is positive"
     If a number is negative, print "The number is negative"
     If it nether negative nor positive, print as "The number is neither positive nor negative"
+    
+ JUMPING STATEMENTS:
+#1 : break
+The break keyword is used to break out a for loop, a while loop or a switch block.
+pgm 1 : 
+print all the numbers as in the for loop. ( 1 to 10)
+But quit the loop when the value is 5
+		for (int i = 0; i < 7; i++) {
+			if(i==5) {
+			   break;
+			}
+		//	System.out.println(i);
+		}
+
+#2 : continue
+The continue keyword is used to end the current iteration in a for loop (or a while loop), 
+and continues to the next iteration
+pgm 2: Print only odd numbers // Skip all the even numbers
+
+		// print all odd numbers alone from 1 to 15
+		// skip all the even  numbers
+		
+		for (int i = 0; i <= 15; i++) {
+			if(i%2 == 0) {
+				continue;
+			}
+			System.out.println(i);
+		}
+
+#3 : return
+Takes the control out of the method.
+
+		for (int i = 0; i < 10; i++) {
+			System.out.println(i);
+			
+			if(!value) {
+				return;
+			}
+		}
+
+******************************************************
+CLASSES AND OBJECTS:
+-------------------
+Class : Blueprint for the object. 
+        IT is from this the objects are created/replicated
+
+Object: An entity that has both state and behavior.
+        It is an instance of the class
+
+1)variables / properties:
+  -----------------------
+2)methods/actions:
+  ----------------
+  Access specifiers:
+Who can access this ? or The extent upto which it can be accessed
+To set access levels for classes, variables, methods, and constructors
+
+ClassRoom:
+==========
+- Create package name as week1.day2
+- Create a  new class as "MyMobile" under week1.day2
+- create variables for the class
+- Create 2 public methods (makeCall() , sendMsg()) with simple print statement
+- Create a private method payBills() with simple print statement
+
+- Create main method
+- Create object for Mobile class and call the methods and variables using the object
+- Execute the class and get the result in console
+
+- Create a new class as MyKid in week1.day2 package
+- Create an object for the previous class "MyMobile"
+- Try to access all the 3 methods of class "MyMobile"
+- Observe the access level of all the methods.( See if all the methods are called)
+
+Methods with return values and arguments:
+-----------------------------------------
+
+
+ARRAYS:
+ - Arrays are used to store multiple values in a single variable
+ - Collection of similar type of elements which has contiguous memory location- 
+ - We can store only a fixed number of elements in a Java array.
+ - It doesn't grow its size at runtime.
+
+# Syntax:
+  dataType[] <variableName> = value
+
+# How do I Access the each Element of an Array?
+  -- By referring the index number
+
+  Array indexes start with 0: [0] --> refers the first element
+
+# To find the number of elements in an array
+        Length of the array: array.length;
+           length is a property
+# Finding the first and the last elements: 
+
+# How to access multiple elements at a time from array?
+  - for
+  - for each
+ 
+# sorting the array:
+
+# Exception :
+
+
+Classroom:
+Find the second largest number:
+Find the second smallest number:
 
 
 
