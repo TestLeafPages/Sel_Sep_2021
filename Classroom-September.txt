@@ -519,6 +519,389 @@ STEPS FOR LOGIN TEST CASE
 // Step 7: Locate the Login button and click it
 // Step 8: Click CRM/SFA link
 
+**********************************************
+******************************************************************
+Agenda:
+1. Strings
+2. Selenium
+
+
+
+STRINGS:
+=======
+A String in Java is actually an object
+It contain methods that can perform certain operations on strings
+
+
+How to create object for a string?
+
+
+1. Using literals :
+2. Using new keyword:
+
+1. String Length                                     : str.length()
+2. Find a character in a String                      : charAt()
+3. Get the position of a character in the string     : indexOf()
+4. Get the last position of a character in the string: lastIndexOf()
+5. Convert a string to a character array             : toCharArray()
+6. Convert a character array to string               : String.valueOf(chArr)
+
+7. Change a string to UpperCase : str.toUpperCase()
+8. Change a string to lowerCase : str.toUpperCase()
+
+9. Change a character to UpperCase : Character.toUpperCase(chArr[i])
+10.Change a character to lowerCase : Character.toLowerCase(chArr[i])
+
+11. Compare two strngs             : str.equals(String) 	
+12. str.contains()
+
+Demo:
+https://github.com/TestLeafPages/SeleniumAssignments/blob/master/week1/day2/classroom/string/CharOccurance.java
+  - use charAt() and toCharArray()
+
+
+String str = "welcome to chennai";
+Problem statement:
+Check number of occurrences of a char (eg 'e') in a String
+
+1. declare the string
+2. conevrt to char array
+3. for loop -- char array
+      if(chek if the incoming charcater is e) - count
+
+ClassRoom:
+https://github.com/TestLeafPages/SeleniumAssignments/blob/master/week1/day2/assignments/mandatory/ChangeOddIndexToUpperCase.java
+   - toCharArray()
+   - Character.toUpperCase()
+
+for(){
+    if(i%2 !=0){ // odd
+      Character.toUppercase()
+     syso()
+       }
+   else
+      just print the character
+
+}
+
+changeme
+cHaNgEmE
+
+*******************
+
+ASSIGNMENTS:
+==========
+
+Assignment #3: (Strings)
+=============
+
+https://github.com/TestLeafPages/SeleniumAssignments/blob/master/week1/day2/assignments/mandatory/Palindrome.java
+https://github.com/TestLeafPages/SeleniumAssignments/blob/master/week1/day2/assignments/mandatory/ChangeOddIndexToUpperCase.java
+https://github.com/TestLeafPages/SeleniumAssignments/blob/master/week1/day2/assignments/optional/Anagram.java
+https://github.com/TestLeafPages/SeleniumAssignments/blob/master/week1/day2/classroom/string/CharOccurance.java
+https://github.com/TestLeafPages/SeleniumAssignments/blob/master/week1/day2/classroom/string/FindTypes.java
+
+https://github.com/TestLeafPages/SeleniumAssignments/blob/master/week1/day2/assignments/mandatory/ReverseEvenWords.java
+
+*********************************
+SELENIUM:
+---------
+1. Selenium Introduction:
+---------------------------
+Web Automation tool : Only web applications can be automated
+Open source : 
+Multiple Browsers: 
+   IE
+   Firefox
+   Chrome
+   Edge
+   Safari
+   Opera
+Multiple Languages:
+   java
+   C#
+   Python
+   Ruby
+   Perl
+
+2. Selenium Internal architecture:
+4 components:
+
+Selenium RC (RemoteControl)
+Selenium IDE
+Selenium WebDriver:
+Selenium grid
+
+3. How to set up your work environment?
+***************************************
+3. How to set up your work environment?
+	Open a Maven Project
+	Update with the dependencies required in pom.xml
+          (Project Object Model or POM is the fundamental unit of work in Maven)
+	What is POM.xml?
+		The POM is an XML document contains information about the project and various configuration detail 
+	What are dependencies?
+		Dependencies are external JAR files (Java libraries) that the project uses
+        Maven dependendencies in your local repository --> .m2
+	Force update in case pom.xml throws an error.
+
+Dependences required:
+1. selenium-java ( client - language)
+
+2. WebDriverManager dependency:
+ Automatically manages the drivers
+ 1. Download the driver in your local machine
+ 2. Download the driver that matches the browser version
+3. commons io
+
+****************************************
+
+READY TO CODE!!!!
+  *****Launch the browser*******
+
+1. WebDriverManager 
+2. Instantiate the driver
+3. driver.get()
+    Exception in thread "main" org.openqa.selenium.InvalidArgumentException: invalid argument
+4. driver.manage.windows.maximize();
+4. driver.getTitle()
+5. driver.close()
+      socketException
+
+********************************************
+
+http://leaftaps.com/opentaps/control/main
+username : demosalesmanager
+password : crmsfa
+
+1. Enter the username
+2. Enter the password
+3. Click on the login button
+
+web elements:
+
+Element Location Strategies:
+***************************
+
+HTML:
+
+root tag : <html> 
+DOM: Document Object Model
+HTML tags:
+---------
+<html>
+<div>
+<a>
+<label>
+<input>
+<button>
+<table>
+<select>
+<option>
+
+
+Structure of HTML element:
+=========================
+1. Tag               : Tagname : purple text  / Mandatory   
+2. Attributes        : Orange                 / Optional
+3. Attribute values  : Blue text              / Optional
+4. Text              : Black                  / Optional
+
+
+How to locate the web element?
+
+Locators:(selenium)
+Where do we find the locators: HTML code ( devTools)
+
+1. id    (optional) : Attribute
+                      Use:     Unique 
+                      Not use: Duplicates, auto generated numbers (eg) : ext-gen603 ext-gen612
+2. name  (optional) : Attribute
+                      Use:     Unique 
+                      Not use: Duplicates
+3. class (optional) : Attribute
+                      Use:     Unique 
+                      Not use: Duplicates, No space 
+4. LinkText:          <a> - anchor tag + text
+5. text() :        Optional
+                    Black 
+6. tagname:       Mandatory
+7. Xpath: 
+8. CSS locator  - NO
+
+Steps to locate a web element:
+=============================
+
+1. Find the web element
+
+driver.findElement(By by):
+  Find the first web element using the given method
+  Returns the first matching element on the current context
+
+  If no matching elements are found, 
+     throws NoSuchElementException 
+
+  1. driver - represents the browser
+  2. Web element - represents a DOM node
+
+2. Perform the action on it:
+
+   ********* Login Test case*******
+url: http://leaftaps.com/opentaps
+username: demosalesmanager
+password: crmsfa
+
+
+STEPS FOR LOGIN TEST CASE
+*************************
+
+// Step 1: Download and set the path 
+// Step 2: Launch the chromebrowser
+// Step 3: Load the URL
+// Step 4: Maximise the window
+// Step 5: Locate the username and type "demosalesmanager"
+// Step 6: Locate the password and type "crmsfa"
+// Step 7: Locate the Login button and click it
+// Step 8: Click CRM/SFA link
+
+**********************************************
+
+Week2 Day2:
+Sep 12 2021
+***********
+Agenda:
+*******
+1. Strings
+2. get methods:
+	get()
+	getText()
+	getAttribute()
+	getTitle()
+3. implicitly wait
+4. DropDown
+5. Xpath
+
+*********************************
+Strings:
+*****************
+Convert a string to words: split()
+Get a part of the string: subString()
+Replace a character:
+7. replace
+8. replace integers, non integers
+str.replaceAll("[\\d]", ""); - non integers
+str.replaceAll("[\\D]", ""); - integers
+11. startsWith()
+12. endsWith()
+
+**********************************
+Dropdown:
+--------
+<select>
+   <options>
+
+
+How to handle a drop down?
+-------------------------
+
+1. Locate the webElement:
+2. Create an object for the Select class and pass the webelement as the parameter 
+
+How to select a value in dropdown list?
+-----------------------------------------
+1. selectByVisibleText: selectByVisibleText(String arg0): void
+2. selectByIndex: selectByIndex(int arg0) : void
+3. selectByValue: selectByValue(String arg0) : void
+
+*********************************************************
+
+Xpath:
+------
+When locators are not available
+
+A. Absolute Xpath:
+===================
+Xpath of username field in login page:
+/html/body/div[2]/div/div/form/p/input
+
+It contains the complete path from the Root Element to the desired element.
+
+- not a preffered choice
+- Unreliable because a small change in the UI, can change the absolute Xpath  
+
+
+B. Relative Xpath: (13 types of Xpath)
+==================
+We start from a reference element and reach the particular element
+Selenium by default chooses the first result out of multiple results
+Xpath of username field in login page:
+(eg)//input
+
+
+1. Attribute Based XPath:
+   ----------------------
+Syntax:
+//tagname[@attribute='attributeValue']
+
+//input[@id='username']
+//input[@class='inputLogin']
+//input[@type='password']
+
+2. Text Based Xpath:
+   -----------------
+Syntax:
+//tagname[text()='text value in DOM']
+
+//label[text()='Username']
+//h2[text()='Leaftaps Login']
+
+3. Partial Match Xpath:
+=======================
+
+a) Partial Text Based Xpath:
+---------------------------
+Syntax:
+//tagname[contains(text(),'Partial text in my DOM')]
+//h2[contains(text(),'Leaftaps')]
+
+a) Partial attribute Based Xpath:
+---------------------------------
+//tagname[contains(@attribute,'Partial value of the attribute')]
+
+//input[@type='password']
+//input[contains(@type,'pass')]
+
+4. Collections Based Xpath:
+===========================
+
+Syntax:
+(Any valid relative Xpath)[index]
+(Xpath)[index]
+
+(//input[@class='inputLogin'])[2]
+
+
+5. Advanced Xpath/ RelationShip based Xpath/ Axes based Xpath:
+==============================================================
+
+8 types and its syntax:
+-----------------------
+
+1 Parent To child                 : parent xpath/tagName of child
+2 GrandParent to child Relation   : GrandParent xpath//tagName of grand child
+3 Child to parent                 : child xpath/parent::parent tagName
+4 Grand child to Grand parent     : GrandChild xpath/ancestor::tagName of grand parent
+5 Elder Sibling toYounger Sibling : Elder sibling xpath/following-sibling::tagName of younger sibling
+6 Younger Sibling to elder Sibling: Younger sibling xpath/preceding-sibling::tagName of Elder sibling
+7 Elder cousin to Younger cousin  : Elder cousing xpath/following::tagName of younger Cousin
+8 Younger cousin to Elder cousin  : Younger cousin xpath/preceding::tagName of Elder cousin
+
+(13 types of Xpath)
+****************************************************************
+
+(Note: implicitly wait)
+driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+
 
 
 
