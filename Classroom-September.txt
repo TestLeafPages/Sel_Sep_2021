@@ -904,6 +904,309 @@ driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 
 
 
+18.09.2021
+week3 day1
+
+Topic: INHERITANCE
+OOPS: Object Oriented Programming
+
+Object :  
+State(variables/properties/attributes) and Behaviour( methods/Actions)
+
+Inheritance in Java
+-------------------
+What is inheritance?
+It allows us to inherit the properties of one class into another class
+
+Why Inheritence?
+Reusability
+
+Keyword: extends
+
+Child : has its own method
+        Alos the inherited methods
+Types:
+Single level
+Multilevel
+
+The existing (old) class is known as base class or super class or parent class. 
+The new class is known as a derived class or sub class or child class
+
+Multiple Inheritence is not supported at Class level
+
+Car: variables:
+noofWheels
+tankCapacity
+
+actions/ methods
+
+driveCar()
+applyBrake()
+startEngine()
+applyGear()
+
+
+Inheritance in Selenium:
+-----------------------
+F3 : Open the declaration
+F4 : hierarchy (parent class)
+
+ChromiumDriver extends RemoteWebDriver			
+ChromeDriver extends ChromiumDriver			
+EdgeDriver extends ChromiumDriver			
+SafariDriver extends RemoteWebDriver			
+FireFoxDriver extends RemoteWebDriver	
+
+		
+POLYMORPHISM:
+-------------
+What is polymorphism?
+
+poly : many
+morph: forms
+
+Types:
+1. Method Overriding/runTime polymorphism
+2. Method Overloading/Compile time polymorphism
+
+*Method Overriding*
+-------------------
+- among diff classes
+- between a parent class and a child class
+
+length(),isEmpty() - String class
+
+*Method Overloading:*
+--------------------
+- Method signature differs
+
+- method name is same:
+    number of arguments differs
+    Type of the argument differs
+- same class
+
+Selenium:
+
+1. By.
+2. sendKeys()
+3. findElement()
+4. ImplicitlyWait()
+
+Java:
+
+print()
+println()
+replace
+subString(start Index)
+subString(start Index, end index)
+
+
+Classroom 3:
+Create class Calculator with below methods
+
+- 2 methods for add,      1 method with 2 int args , 1 method with 3 int args
+- 2 methods for multiply, 1 method with 2 int args, 1method with 1 int and 1 double args
+- 2 methods for subtract, 1 method with 2 int args , 1 method with 2 double args
+- 2 methods to divide ,   1 method with 2 int args, 1 method with one double number and one int
+
+Create object for the Calculator class and execute all the methods
+
+
+Homework:
+---------
+- Try for private access secifier in inheritance
+- Try for protected access secifier in inheritance
+- Try to do (class level) Multiple inheritence at class level( Not supported by Java)
+- Give an example of Method overriding in Selenium
+
+**************************************************
+
+Topic: ABSTRACTION
+******************
+ Abstraction is a process of hiding the implementation details 
+ Showing only functionality to the user.
+
+
+The quality of dealing with ideas rather than events.
+The user will have the information on what the object does instead of how it does 
+
+-- Interface ( 100% of abstraction)
+-- Abstract Class (0-100 % of abstraction )
+
+What is Interface?
+- design/Plan ()
+
+Abstract class : class without a body / no implementation
+Concrete class : class with a body / implementation
+
+1. Added Unimplemented methods inside the Interface
+
+2. Type the Documentation (use /** - Enter)
+
+3. Use the Keyword : implements 
+
+4. All the unimplemnted methods of an Interface has to be 
+   implemented in the implementation class 
+   (ie. the class that implements that Interface)
+
+5. The implementation class can have its own method in it too.
+
+
+6. Object instantiation cannot be done for an Interface.
+
+
+7. CLASS LEVEL MULTIPLE INHERITANCE IS NOT POSSIBLE
+   INTERFACE LEVEL MULTIPLE INHERITANCE IS POSSIBLE
+     ( do it with TWO INTERFACES)
+
+8. Inheritence - extends
+   A class can inherit and also implement, both at a time.
+
+9. Variables in Interface
+ The variable in an interface is public, static, and final by default.
+ public : accesses by any class
+ final  : value cannot be changed
+ static : No need of object to call the variable
+
+If any variable in an interface is defined without public, static, and final keywords then, the compiler automatically adds the same.
+
+Note:
+Interface extends Interface
+Class extends Class
+Class Implements Interface
+
+
+Examples:
+********
+Java example for Interface:
+---------------------------
+interface List<E> extends Collection<E>
+
+Selenium example:
+-----------------
+RemoteWebDriver implements IsRemoteWebDriver
+IsRemoteWebDriver extends WebDriver
+
+Classroom 1:
+===========
+1.Design an Interface TaxCalculation with unimplemented methods below:
+  Include documentations for each method
+        void calcDeductions(String name, double HRA, double LTA)
+	void calcGrossIncome(String name, double netIncome, double deductions)
+	public int taxSlab()
+	public double CalcTaxandPublishValue()
+
+2. Design a second Interface IncomeCalculation with unimplemented method below:
+       public double calcNetIncome(String name, double income1, double income2)
+
+3. Implementation class: 
+       CalcIndividualsTax, CalcBusinessTax  
+       Implement TaxCalculation and IncomeCalculation interfaces
+       Add its own method in this class( which is not in the interface)
+
+4. Create a new class Execution class: ( with main method)
+       Try to implement all the above learnings ( from point 1 to point 9) 
+
+
+Abstraction :
+============
+Abstract Class
+Abstract classes may or may not contain abstract methods, 
+i.e., methods without body ( public void get(); )
+
+But, if a class has at least one abstract method, then the class must be declared abstract.
+
+If a class is declared abstract, it cannot be instantiated.
+
+To use an abstract class, you have to inherit it from another class, 
+      provide implementations to the abstract methods in it.
+
+If you inherit an abstract class, you have to provide implementations 
+       to all the abstract methods in it.
+******************************************************
+
+Collections:
+1. List
+2. Set
+
+COLLECTIONS:
+We can overcome the disadvantages of array in Collections.
+
+7,149 Items Found  Array1 
+8000 Items Array1
+
+LIST:
+
+List:
+-----
+1. Interface
+2. cannot instantiate
+3. Implmentation class : ArrayList
+4. Maintains the insertion order
+5. Can accept duplicates
+6. syntax:
+
+
+List<String> listName = new ArrayList<String>();
+List<Integer> listName = new ArrayList<Integer>();
+
+< > : Generics
+Wrapper Class:
+-------------
+int     Integer
+short   Short
+boolean Boolean
+char    Character
+double  Double
+String  String
+byte    Byte
+long    Long
+float   Float
+Syntax:
+
+Classroom:
+
+1. Get a  String array
+2. Convert to List
+3. Sort and print it
+4. reverse and print it
+
+SET:
+SET:
+1. Interface
+2. cannot instantiate
+3. Implmentation class : 
+     HashSet       : Random order of the data
+     LinkedHashSet : maintains the insertion Order
+     TreeSet       : ASCII order ( sorted)
+4. Maintains the insertion order
+5. Cannot accept duplicates
+6. syntax:
+ Set<WrapperClass> setname = new HashSet<wrapperClass>();
+
+ClassRoom:
+Print the unique characters for the string
+
+Input = "ammu123"
+Output : amu123
+
+Classroom:
+Erail application - to get the list of train numbers
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
