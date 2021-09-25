@@ -1193,6 +1193,196 @@ Output : amu123
 Classroom:
 Erail application - to get the list of train numbers
 
+Week4 Day1: 25-09-2021
+AGENDA:
+
+1. Alerts
+2. Frames
+3. WindowHandling
+4. TakeScreenShot
+
+ALERTS:
+-------
+  web based dialog
+  pop up or dialog 
+  warning msg/ prompt/ Information
+
+1. When an alert is currently active, the main page cannot be interacted.
+2. We cannot inspect an Alert
+3. Not seen in the DOM/  no locators as a normal webElement 
+4. Done through the JavaScript
+5. Cannot have multiple alerts at a time
+6. We canno ttake a screen shot of an alert.
+
+Types:
+1. Modal dialog /Alert
+
+   Types:
+      1. Simple Alert       - Ok button - dismiss()/accept()
+      2. Confirmation Alert - OK button and Cancel button
+      3. Prompt Alert       - OK button and Cancel button, textbox
+
+HANDLING THE ALERT:
+
+   Alert - Interface
+        Implementation class : RemoteAlert
+
+  void dismiss();  Cancel
+  void accept();   Ok button
+  String getText(); To get text from alert
+  void sendKeys(String keysToSend); To type in the text
+
+-- Automaticaly switches the control to the current active dialog
+
+   driver.switchTo().alert();
+
+Step 1: switch the control to the current active dialog (SWITCH)
+Step 2: Use the interface methods to handle the alert   (HANDLE)
+
+
+ALERT EXCEPTIONS:
+----------------
+1)
+// Throws org.openqa.selenium.NoAlertPresentException
+      * If the dialog cannot be found/ or if THERE is no current active alert
+      * Occurs when trying to interact with the alert that is not active curently
+
+2)
+// org.openqa.selenium.UnhandledAlertException
+       Occurs when Alert is still alive and	
+       I try to access the main window
+  
+Classroom1 :
+-----------
+http://www.leafground.com/pages/Alert.html
+ Try to handle frst three alerts in this page.
+ For the Confirmation alert, verify of the OK/Cancel button is clicked
+
+2. Non -Modal dialog/sweet alert:
+      - Can be inspected
+      - Can handle as a normal webElement
+
+egs: IRCTC, tatcliq
+
+      https://www.tatacliq.com/
+      https://www.irctc.co.in/nget/train-search
+
+***********************************
+
+FRAMES:
+-------
+
+1. DOCUMENT INSIDE ANOTHER DOCUMENT (DOM inside a DOM)
+2. <html> root tag for each frames
+
+How does it appear in DOM?
+
+1. <iframe> -- inline frame (floating frame)
+2. <frame>  -- static frame/immovable
+
+http://www.leafground.com/pages/frame.html
+
+Main Document
+<html>
+
+     Frames:
+      <html>
+
+       Step 1: Switch into the frame
+       Step 2: Locate the webelement
+
+            BUTTON
+   Come out of the frame
+
+webElement in main page
+
+
+Identify the frame :
+  step1 : Switch :
+          driver.switchTo().frame()
+         (i) int - index
+         (ii) String - id or name 
+         (iii) WebElement - locator
+          
+ 
+Exception:
+    
+    NoSuchElementException
+    NoFrameElementException
+
+1. NoSuchElementException:
+   - Wrong XPath/Locator
+   - element is not loaded in DOM
+   - when the element is inside a frame, and control is not inside the frame
+ 
+Commands needed for frame:
+
+driver.switchTo().frame(nestedFrame1);
+driver.switchTo().defaultContent(); 
+driver.switchTo().parentFrame();
+
+RETURNING THE CONROL TO THE PREVIOUS LEVELS :
+DefaultContent -- Frame2 control to main DOM  (Top of the DOM)
+parentFrame    -- Frame2 to Frame1 ( One level higher - previous frame)
+
+Frames:
+ServiceNow:
+Instance URL: https://dev113545.service-now.com/
+Username: admin
+Password: w6hnF2FRhwLC
+
+****************************************************
+
+WindowHandling:
+--------------
+
+Normal webElement:  8 locators
+Frames           :  3 options
+Windows          :  window handle
+
+                    Window handle:(String):Unique
+To switch the control to the desired window:
+-------------------------------------------
+driver.switchTo().window(windowHandle);
+
+       getWindowHandle() - Current active (single) window
+                         - return : String
+       getWindowHandles() - Set of Strings
+
+
+4 windows:
+Set - get(2) 
+1
+2
+3
+4
+
+List, Set - Collections:
+   Set  - get a specific value based on index - NO
+1. getWindowHandles()
+
+     1. Set of strings
+     2. Convert the Set to List 
+     3. list.get(window) 
+
+2. driver.switchTo().window(windowHandle);
+
+Exceptions:
+org.openqa.selenium.NoSuchWindowException
+
+*************************************
+ClassRoom:
+
+Alerts and Window handling
+---------------------------
+1. Load https://www.irctc.co.in/
+2. Click on OK button in the dialog  
+3. Click on FLIGHTS link            
+4. Go to the Flights tab
+5. Print the customer care email id
+6. Close the First tab(Train ticket booking) alone
+*****************************
+
 
 
 
