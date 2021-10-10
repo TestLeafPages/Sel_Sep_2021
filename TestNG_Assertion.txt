@@ -1,0 +1,16 @@
+TestNG Assertion: - To do verifcation and validation
+------------------
+1. Hard Assert -> When there is a failure, will not continue the execution
+	assertEquals()
+	assertNotEqual()
+	assertTrue()
+	assertFalse()
+
+2. Soft Assert -> Will execute all the code though there is 		
+				  assertion failure
+	assertAll() -> should be used at the end
+	
+	assertEquals()
+	assertNotEqual()
+	assertTrue()
+	assertFalse()
